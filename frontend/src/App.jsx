@@ -1,16 +1,28 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
+import axios from 'axios'
+//import Test from './components/Test.jsx'
+//import {getGroqChatCompletion} from './api/GroqAPI.jsx'
 
+import './App.css'
 function App() {
   const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    axios.get('http://localhost:3000/api').then(response => {
+      console.log(response.data.message);
+    })
+    .catch(error => {
+      console.error(error);
+    })
+  }, []);
+
 
   return (
     <>
       <div>
         <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
         <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
@@ -26,7 +38,7 @@ function App() {
         </p>
       </div>
       <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+        Bro what the
       </p>
     </>
   )
