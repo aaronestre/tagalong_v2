@@ -7,39 +7,36 @@ import axios from 'axios'
 
 import './App.css'
 function App() {
-  const [count, setCount] = useState(0)
+  const [userInput, setUserInput] = useState("");
+  const [response, setResponse] = useState("");
 
-  useEffect(() => {
-    axios.get('http://localhost:3000/api').then(response => {
-      console.log(response.data.message);
-    })
-    .catch(error => {
-      console.error(error);
-    })
-  }, []);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await axios.put("http://localhost:3000/api", {content: userInput});
+      setResponse(res.data.message);
+    }
+    catch (err) {
+      console.error('Error fetching Groq response:', error);
+      setResponse('An error occurred');
+    }
+
+  }
 
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Bro what the
-      </p>
+      <form onSubmit={handleSubmit}>
+        <input
+            type="text"
+            value={userInput}
+            onChange={(e) => setUserInput(e.target.value)}
+            placeholder="Ask me something..."
+          />
+        <button type="submit">Submit</button>
+      </form>
+      {response && <p>Response: {response}</p>}
     </>
   )
 }
