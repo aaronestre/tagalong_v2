@@ -3,8 +3,12 @@ import { Checkbox, Group, TextInput } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import axios from "axios";
 import SubmitButton from "./SubmitButton";
+import ChatInput from "./ChatInput";
 
 function GroqChat() {
+
+  const getContent = (message) => setUserInput(message);
+
   const [userInput, setUserInput] = useState("");
   const [response, setResponse] = useState("");
 
@@ -25,13 +29,8 @@ function GroqChat() {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={userInput}
-          onChange={(e) => setUserInput(e.target.value)}
-          placeholder="Ask me something..."
-        />
-        <SubmitButton text="Submit"/>
+        <ChatInput getContent={getContent}/>
+        <SubmitButton text="Submit" />
       </form>
       {response && <p>Response: {response}</p>}
     </>

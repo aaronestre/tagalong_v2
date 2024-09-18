@@ -1,15 +1,14 @@
-import {React} from 'react';
-import './App.css'
+import { React } from "react";
+import "./App.css";
 
-import GroqChat from './components/GroqChat.jsx'
+import GroqChat from "./components/GroqChat.jsx";
 
 function App() {
-
   return (
     <>
       <GroqChat></GroqChat>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
