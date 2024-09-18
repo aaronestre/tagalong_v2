@@ -1,7 +1,8 @@
 import { React, useState } from "react";
-import { Button, Checkbox, Group, TextInput } from "@mantine/core";
+import { Checkbox, Group, TextInput } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import axios from "axios";
+import SubmitButton from "./SubmitButton";
 
 function GroqChat() {
   const [userInput, setUserInput] = useState("");
@@ -9,7 +10,7 @@ function GroqChat() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    console.log("Submitted");
     try {
       const res = await axios.put("http://localhost:3000/api", {
         content: userInput,
@@ -30,7 +31,7 @@ function GroqChat() {
           onChange={(e) => setUserInput(e.target.value)}
           placeholder="Ask me something..."
         />
-        <Button type="submit">Submit</Button>
+        <SubmitButton text="Submit"/>
       </form>
       {response && <p>Response: {response}</p>}
     </>
