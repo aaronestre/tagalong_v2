@@ -6,7 +6,7 @@ import GroqChat from "./components/GroqChat.jsx";
 function App() {
   return (
     <>
-      <GroqChat></GroqChat>
+      <GroqChat/>
     </>
   );
 }

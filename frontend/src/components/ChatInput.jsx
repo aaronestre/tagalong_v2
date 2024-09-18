@@ -1,19 +1,23 @@
 import { React, useState } from "react";
-import { TextInput } from "@mantine/core";
+import { TextInput, Group } from "@mantine/core";
+import SubmitButton from "./SubmitButton";
 
 function ChatInput({ getContent }) {
-
   return (
     <>
-      <TextInput
-        size="md"
-        radius="xl"
-        placeholder="Ask a question"
-        type="text"
-        onChange={(e) => {
+      <Group>
+        <TextInput
+          size="md"
+          radius="xl"
+          variant="filled"
+          placeholder="Ask a question"
+          type="text"
+          onChange={(e) => {
             getContent(e.target.value);
-        }}
-      />
+          }}
+        />
+
+      </Group>
     </>
   );
 }
