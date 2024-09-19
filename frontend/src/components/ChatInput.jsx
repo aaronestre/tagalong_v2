@@ -7,7 +7,7 @@ function ChatInput({ getContent }) {
     <>
       <Group>
         <TextInput
-          size="md"
+          size="lg"
           radius="xl"
           variant="filled"
           placeholder="Ask a question"

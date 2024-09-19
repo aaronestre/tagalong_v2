@@ -5,7 +5,7 @@ import ChatInput from './ChatInput';
 
 function ChatLayout() {
   return (
-    <Container size="md" style={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
+    <Container size="md" style={{ backgroundColor: "grey", height: '100vh', display: 'flex', flexDirection: 'column' }}>
       <Paper padding="md" style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'auto' }}>
         <Title order={2} style={{ marginBottom: '1rem' }}>Tagalong</Title>
       </Paper>
