@@ -9,7 +9,7 @@ import { MantineProvider, createTheme } from '@mantine/core';
 import {BrowserRouter, createBrowserRouter} from "react-router-dom";
 
 const theme = createTheme({
-
+  fontFamily: 'Montserrat',
 });
 
 createRoot(document.getElementById("root")).render(

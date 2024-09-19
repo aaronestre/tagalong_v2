@@ -6,6 +6,7 @@ import {
   Button,
   useMantineColorScheme,
   useComputedColorScheme,
+  Text,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { IconSun, IconMoon } from "@tabler/icons-react";
@@ -26,7 +27,7 @@ function Header({opened, toggle}) {
         style={{ padding: "10px 20px" }}
       >
         <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
-        <div>Tagalong</div>
+        <Text size="xl" variant="gradient" gradient={{ from: "orange", to: "red", deg: 45 }}>Tagalong</Text>
         <Button size="sm" variant="link" onClick={toggleColorScheme}>
           {computedColorScheme === "dark" ? <IconMoon /> : <IconSun />}
         </Button>
