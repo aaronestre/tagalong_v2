@@ -40,12 +40,16 @@ function GroqChat() {
     <>
       <form onSubmit={handleSubmit}>
         <Grid gutter="xs">
-          <GridCol span={2}></GridCol>
-          <GridCol span={8} mih="79vh" mah="79vh"><Messages messages={messages}/></GridCol>
-          <GridCol span={2}></GridCol>
+          <GridCol span={1}></GridCol>
+          <GridCol span={10} mih="79vh" mah="79vh"><Messages messages={messages}/></GridCol>
+          <GridCol span={1}></GridCol>
           <Grid.Col span={12}></Grid.Col>
-          <Grid.Col span={2}></Grid.Col>
-          <Grid.Col span={8}>
+          <Grid.Col span={12}></Grid.Col>
+          <Grid.Col span={12}></Grid.Col>
+          <Grid.Col span={12}></Grid.Col>
+          <Grid.Col span={12}></Grid.Col>
+          <Grid.Col span={1}></Grid.Col>
+          <Grid.Col span={9}>
             <ChatInput getContent={getContent} />
           </Grid.Col>
           <Grid.Col span={1}>
