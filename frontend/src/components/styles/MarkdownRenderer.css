@@ -1,0 +1,10 @@
+.markdown {
+    max-width: 450px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 0;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}

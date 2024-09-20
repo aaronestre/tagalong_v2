@@ -1,5 +1,6 @@
 import React from "react";
 import { Paper, Text, ScrollArea } from "@mantine/core";
+import MarkdownRenderer from "./MarkdownRenderer";
 
 function Messages({messages}) {
   return (
@@ -25,9 +26,7 @@ function Messages({messages}) {
               color: msg.type === "bot" ? "#000" : "#fff",
             }}
           >
-            <Text m="15px" maw="450px">
-              {msg.text}
-            </Text>
+            <MarkdownRenderer message={msg.text} type={msg.type} style={{"justify-content": "flex-start"}}/>
           </Paper>
         ))}
       </div>
