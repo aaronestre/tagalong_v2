@@ -1,6 +1,5 @@
 import { React, useState } from "react";
-import { ScrollArea, Container } from "@mantine/core";
-import { useForm } from "@mantine/form";
+import { Grid, Flex, GridCol } from "@mantine/core";
 import axios from "axios";
 import SubmitButton from "./SubmitButton";
 import ChatInput from "./ChatInput";
@@ -27,10 +26,19 @@ function GroqChat() {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <ChatInput getContent={getContent} />
-        <SubmitButton text="Submit" />
+        <Grid gutter="xs">
+          <GridCol span={12}>Big Dog</GridCol>
+          <Grid.Col span={1}></Grid.Col>
+          <Grid.Col span={8}>
+            <ChatInput getContent={getContent} />
+            {response && <p>Response: {response}</p>}
+          </Grid.Col>
+          <Grid.Col span={2}>
+            <SubmitButton />
+          </Grid.Col>
+          <Grid.Col span={1}></Grid.Col>
+        </Grid>
       </form>
-      {response && <p>Response: {response}</p>}
     </>
   );
 }
