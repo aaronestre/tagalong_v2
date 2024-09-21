@@ -3,6 +3,9 @@ import { Button, Card, Text, Grid } from "@mantine/core";
 import axios from "axios";
 
 function Vocab() {
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
   const handleSubmit = async (e) => {
     if (e) e.preventDefault();
 
@@ -57,10 +60,10 @@ function Vocab() {
           style={{ cursor: "pointer", display: "flex", justifyContent: "center", alignContent: "center"}}
         >
           <Text weight={500} size="xl" fw={800} ta="center" fz="90px">
-            {tagalog ? vocabWord?.word : vocabWord?.english_translation}
+            {capitalizeFirstLetter(tagalog ? vocabWord?.word : vocabWord?.english_translation)}
           </Text>
           <Text weight={100} size="md" ta="center" fz="20px"> 
-            {tagalog ? "" : vocabWord?.english_definition}
+            {capitalizeFirstLetter(tagalog ? "" : vocabWord?.english_definition)}
           </Text>
         </Card>
       </Grid.Col>
