@@ -14,4 +14,18 @@ async function getGroqChatCompletion(content) {
     });
 }
 
-module.exports = { getGroqChatCompletion };
+async function getGroqVocabWord(content) {
+    return await groq.chat.completions.create({
+        messages: [
+            {
+                role: "user",
+                content: content,
+            },
+        ],
+        model: "llama3-8b-8192",
+        temperature: 0.8,
+        response_format: { type: "json_object" },
+    });
+}
+
+module.exports = { getGroqChatCompletion, getGroqVocabWord };

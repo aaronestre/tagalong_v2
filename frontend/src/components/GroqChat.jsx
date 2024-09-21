@@ -22,13 +22,13 @@ function GroqChat() {
     console.log("Submitted");
 
     try {
-      const res = await axios.put("http://localhost:3000/api", {
-        content: userInput,
+      const res = await axios.put("http://localhost:3000/api/chat", {
+        content: "You are an expert/fluent in tagalog and you are now a tutor. Using your expertise please help with any questions." + userInput,
       });
       setMessages((prevMessages) => [...prevMessages, { text: res.data.message, type: "bot" }]);
       console.log(res.data.message);
     } catch (err) {
-      console.error("Error fetching Groq response:", error);
+      console.error("Error fetching Groq response:", error.response.data);
       setMessages((prevMessages) => [...prevMessages, { text: "An error occurred", type: "bot" }]);
     }
 
