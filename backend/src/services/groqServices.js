@@ -23,7 +23,7 @@ async function getGroqVocabWord(content) {
             },
         ],
         model: "llama3-8b-8192",
-        temperature: 0.8,
+        temperature: 1,
         response_format: { type: "json_object" },
     });
 }

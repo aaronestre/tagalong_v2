@@ -1,8 +1,8 @@
 import React from "react";
 import {Route, Routes} from "react-router-dom";
 import NotFound from "./NotFound";
-import GroqChat from "./GroqChat";
-import Vocab from "./Vocab";
+import GroqChat from "../pages/Tutor/GroqChat";
+import Vocab from "../pages/Vocab/Vocab";
 
 function RouterSwitcher() {
   return (

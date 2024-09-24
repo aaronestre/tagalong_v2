@@ -1,6 +1,6 @@
 import React from "react";
 import { Paper, Text, ScrollArea } from "@mantine/core";
-import MarkdownRenderer from "./MarkdownRenderer";
+import MarkdownRenderer from "../Vocab/MarkdownRenderer";
 
 function Messages({messages}) {
   return (
