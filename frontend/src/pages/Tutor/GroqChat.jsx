@@ -19,8 +19,6 @@ function GroqChat() {
 
     setMessages((prevMessages) => [...prevMessages, { text: userInput, type: "user" }]);
 
-    console.log("Submitted");
-
     try {
       const res = await axios.put("http://localhost:3000/api/chat", {
         content: "You are an expert/fluent in tagalog and you are now a tutor. Using your expertise please help with any questions." + userInput,

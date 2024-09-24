@@ -1,10 +1,12 @@
 import { React, useState, useEffect } from "react";
 import { Button, Grid } from "@mantine/core";
 import axios from "axios";
+import {play} from 'elevenlabs'
 
 import VocabCard from "./VocabCard";
 import FetchVocabButton from "./FetchVocabButton";
 import { fetchVocab } from "./FetchVocab";
+import { fetchVoice } from "./FetchVoice";
 
 function Vocab() {
 
@@ -16,6 +18,15 @@ function Vocab() {
       console.error("Failed to fetch vocab word:", err);
     }
   };
+
+  const handleFetchVoice = async (e) => { 
+    try {
+      fetchVoice(vocabWord.word);
+    }
+    catch (err) {
+      console.error("Failed to fetch text-to-speech");
+    }
+  }
 
   const setVocabWordCallback = (word) => { 
     setVocabWord(word);
@@ -57,6 +68,7 @@ function Vocab() {
         <FetchVocabButton onClick={handleFetchVocab} />
       </Grid.Col>
       <Grid.Col span={2} />
+      <Grid.Col span={12}><Button onClick={handleFetchVoice}>🔊 Listen</Button></Grid.Col>
     </Grid>
   );
 }

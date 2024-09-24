@@ -7,12 +7,14 @@ dotenv.config({
 })
 
 const groqRoutes = require('./routes/groqRoutes');
+const elevenRoutes = require('./routes/elevenlabsRoutes');
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
 app.use('/api', groqRoutes);
+app.use('/eleven', elevenRoutes);
 
 app.get('/', (req, res) => {
   res.send("<h1>Welcome to the backend!</h1>")
