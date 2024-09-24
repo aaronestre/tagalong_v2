@@ -4,7 +4,7 @@ import axios from "axios";
 
 import { fetchVocab } from "./FetchVocab";
 
-const FetchVocabButton = ({onClick}) => { 
+const FetchVocabButton = ({onClick, text}) => { 
 
     return (
         <Button
@@ -15,7 +15,7 @@ const FetchVocabButton = ({onClick}) => {
           radius="xl"
           m="0 auto"
         >
-          New Word
+          {text}
         </Button>
     )
 
