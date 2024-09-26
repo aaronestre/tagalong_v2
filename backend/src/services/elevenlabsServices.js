@@ -2,7 +2,7 @@ const axios = require("axios");
 const { ElevenLabsClient } = require("elevenlabs");
 
 const elevenlabs = new ElevenLabsClient({
-  apiKey: process.env.VITE_ELEVENLABS_API_KEY,
+  apiKey: process.env.ELEVENLABS_API_KEY,
 });
 
 async function getElevenVoice(text) {

@@ -3,7 +3,7 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 
 dotenv.config({
-  path: '../../frontend/.env'
+  path: '.env'
 })
 
 const groqRoutes = require('./routes/groqRoutes');
