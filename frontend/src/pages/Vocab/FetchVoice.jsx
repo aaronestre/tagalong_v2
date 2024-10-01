@@ -13,6 +13,6 @@ export const fetchVoice = async (text) => {
       const audio = new Audio(audioUrl);  
       audio.play();
     } catch (error) {
-      console.error('Error fetching voice:', error);
+      console.error('Error fetching voice on the frontend:', error);
     }
   };
