@@ -20,7 +20,7 @@ async function getElevenVoice(text) {
     const content = Buffer.concat(chunks);
     return content;
   } catch (error) {
-    throw new Error("Error generating speech on the backend: " + error.message);
+    throw new Error("Error generating speech on the backend: " + error.status + " " + error.message);
   }
 }
 
