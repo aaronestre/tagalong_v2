@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
   res.send("<h1>Welcome to the backend!</h1>")
 })
 
-const port = process.env.PORT || 3000;
+const port = process.env.MY_PORT || 3000;
 app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+    
 });

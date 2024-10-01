@@ -20,7 +20,7 @@ function GroqChat() {
     setMessages((prevMessages) => [...prevMessages, { text: userInput, type: "user" }]);
 
     try {
-      const res = await axios.put("http://localhost:3000/api/chat", {
+      const res = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/chat`, {
         content: "You are an expert/fluent in tagalog and you are now a tutor. Using your expertise please help with any questions." + userInput,
       });
       setMessages((prevMessages) => [...prevMessages, { text: res.data.message, type: "bot" }]);

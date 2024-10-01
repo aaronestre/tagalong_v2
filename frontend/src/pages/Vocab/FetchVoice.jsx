@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const fetchVoice = async (text) => {
     try {
-      const response = await axios.put("http://localhost:3000/eleven/voice", {
+      const response = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/eleven/voice`, {
         text: text,
       }, {
         responseType: 'arraybuffer'
